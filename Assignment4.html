@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 4</title>
+    <style>
+        .ns {
+
+            height: 300px;
+            width: 500px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div class="ns"> <br>
+            <h1 style="text-decoration: underline;">Calculator</h1> <br>
+
+            <label for="num1">Enter Number 1:</label>
+            <input type="text" id="num1"><br><br>
+
+            <label for="num2">Enter Number 2:</label>
+            <input type="text" id="num2"><br><br>
+
+            <label for="result">Result:</label>
+            <input type="text" id="result" readonly><br><br>
+
+            <input type="button" value="Addition" onclick="Add()"> &nbsp;&nbsp;
+            <input type="button" value="Subtraction" onclick="Sub()"> &nbsp;&nbsp;
+            <input type="button" value="Multiplication" onclick="Mul()"> &nbsp;&nbsp;
+            <input type="button" value="Division" onclick="Div()">
+        </div>
+    </center>
+
+    <script>
+        function Add() {
+            var refToX = document.getElementById("num1").value;
+            var refToY = document.getElementById("num2").value;
+            var refToResult = document.getElementById("result");
+
+            // Convert input values to integers
+            var x = parseInt(refToX);
+            var y = parseInt(refToY);
+
+            // Perform addition
+            var result = x + y;
+            refToResult.value = result;
+
+            console.log(result);
+        }
+
+        function Sub() {
+            var refToX = document.getElementById("num1").value;
+            var refToY = document.getElementById("num2").value;
+            var refToResult = document.getElementById("result");
+
+            var x = parseInt(refToX);
+            var y = parseInt(refToY);
+
+            // Perform subtraction
+            var result = x - y;
+            refToResult.value = result;
+
+            console.log(result);
+        }
+
+        function Mul() {
+            var refToX = document.getElementById("num1").value;
+            var refToY = document.getElementById("num2").value;
+            var refToResult = document.getElementById("result");
+
+            var x = parseInt(refToX);
+            var y = parseInt(refToY);
+
+            // Perform multiplication
+            var result = x * y;
+            refToResult.value = result;
+
+            console.log(result);
+        }
+
+        function Div() {
+            var refToX = document.getElementById("num1");
+            var refToY = document.getElementById("num2");
+            var refToResult = document.getElementById("result");
+
+            var x = parseInt(refToX.value);
+            var y = parseInt(refToY.value);
+
+            if (y === 0) {
+                refToResult.value = "Cannot divide by 0";
+            } else {
+                // Perform division
+                var result = x / y;
+                refToResult.value = result;
+            }
+
+            console.log(result);
+        }
+    </script>
+</body>
+
+</html>
